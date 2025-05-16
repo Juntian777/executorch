@@ -24,6 +24,23 @@
       }
     },
     {
+      "name": "ios-arm64",
+      "displayName": "Build everything buildable on iOS arm64",
+      "inherits": ["common"],
+      "generator": "Xcode",
+      "cacheVariables": {
+        "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/third-party/ios-cmake/ios.toolchain.cmake",
+        "EXECUTORCH_BUILD_PRESET_FILE": "${sourceDir}/tools/cmake/preset/ios-arm64.cmake",
+        "PLATFORM": "OS64",
+        "DEPLOYMENT_TARGET": "17.0"
+      },
+      "condition": {
+        "lhs": "${hostSystemName}",
+        "type": "equals",
+        "rhs": "Darwin"
+      }
+    },
+    {
       "name": "pybind",
       "displayName": "Build pybindings exported in the wheel",
       "inherits": ["common"],

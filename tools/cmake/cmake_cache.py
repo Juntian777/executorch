@@ -5,6 +5,7 @@
 # LICENSE file in the root directory of this source tree.
 
 from dataclasses import dataclass
+from functools import cache
 from typing import Dict, Optional
 
 _FALSE_VALUES = {"off", "0", "", "no"}
@@ -40,6 +41,7 @@ class CMakeCache:
         return True
 
     @staticmethod
+    @cache
     def read_cmake_cache(cache_path: str) -> Dict[str, CacheValue]:
         result = {}
         with open(cache_path, "r") as cache_file:

@@ -5,6 +5,3 @@
 # LICENSE file in the root directory of this source tree.
 
 include(${PROJECT_SOURCE_DIR}/tools/cmake/preset/apple-common.cmake)
-include(${PROJECT_SOURCE_DIR}/tools/cmake/preset/pybind.cmake)
-
-set_overridable_option(EXECUTORCH_BUILD_EXECUTOR_RUNNER ON)
